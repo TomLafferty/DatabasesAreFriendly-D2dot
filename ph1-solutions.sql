@@ -32,7 +32,18 @@ JOIN inventory i ON i.film_id = f.film_id
 WHERE i.store_id = 1;
 
 # Insert a record to represent Mary Smith renting ‘Academy Dinosaur’ from Mike Hillyer at Store 1 today .
+INSERT INTO rental (rental_date, inventory_id, customer_id, return_date, staff_id)
+VALUES (TIMESTAMP('2022-01-11'), 1, 1, null, 1);
+
 # When is ‘Academy Dinosaur’ due?
+SELECT * FROM 
+
 # What is that average running time of all the films in the sakila DB?
+
+
 # What is the average running time of films by category?
+
+
 # Why does this query return the empty set?
+
+
