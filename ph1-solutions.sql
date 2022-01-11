@@ -15,9 +15,14 @@ SELECT * FROM actor_info WHERE last_name = 'Johansson';
 SELECT Count(DISTINCT last_name) FROM actor;
 
 # Which last names are not repeated?
+SELECT DISTINCT last_name FROM actor;
 
 # Which last names appear more than once?
+SELECT last_name FROM actor GROUP BY last_name HAVING COUNT(*) > 1;
+
 # Which actor has appeared in the most films?
+SELECT a.first_name, a.last_name, COUNT(fa.actor_id) as 'number of films' fROM actor a JOIN film_actor fa ON a.actor_id = fa.actor_id GROUP BY fa.actor_id ORDER BY COUNT(fa.actor_id) DESC LIMIT 1;
+
 # Is ‘Academy Dinosaur’ available for rent from Store 1?
 # Insert a record to represent Mary Smith renting ‘Academy Dinosaur’ from Mike Hillyer at Store 1 today .
 # When is ‘Academy Dinosaur’ due?
