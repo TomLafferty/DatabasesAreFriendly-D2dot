@@ -24,6 +24,13 @@ SELECT last_name FROM actor GROUP BY last_name HAVING COUNT(*) > 1;
 SELECT a.first_name, a.last_name, COUNT(fa.actor_id) as 'number of films' fROM actor a JOIN film_actor fa ON a.actor_id = fa.actor_id GROUP BY fa.actor_id ORDER BY COUNT(fa.actor_id) DESC LIMIT 1;
 
 # Is ‘Academy Dinosaur’ available for rent from Store 1?
+# Yes
+SELECT
+f.title, i.store_id
+FROM film f
+JOIN inventory i ON i.film_id = f.film_id
+WHERE i.store_id = 1;
+
 # Insert a record to represent Mary Smith renting ‘Academy Dinosaur’ from Mike Hillyer at Store 1 today .
 # When is ‘Academy Dinosaur’ due?
 # What is that average running time of all the films in the sakila DB?
